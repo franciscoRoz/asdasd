@@ -15,6 +15,8 @@ pipeline {
       steps {
           script {			
            echo 'hola mundo'
+           echo 'CD C:\Users\Fran-Nico\Desktop\Testjenkins'
+           echo 'mkdir file'
         }
       }
     }
