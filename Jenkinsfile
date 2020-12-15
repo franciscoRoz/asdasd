@@ -14,9 +14,10 @@ pipeline {
      
       steps {
           script {			
-           echo 'hola mundo'
-           echo 'CD C://Users//Fran-Nico//Desktop//Testjenkins'
-           echo 'mkdir file'
+           
+           echo 'F://Desktop//workspace//Jenkins//analisis_node//index.js'
+           echo 'npm install'
+           echo 'node index'
         }
       }
     }
