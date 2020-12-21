@@ -4,14 +4,14 @@ pipeline {
         stages {
             stage ('install') {
                 steps {
-                    dir("build_node"){
+                    dir("test desde git"){
                       sh "npm install"
                     } 
                 }
             }
             stage ('test') {
                 steps {
-                  dir("build_node"){
+                  dir("test desde git"){
                         sh "npm test"
                   }
                 }
