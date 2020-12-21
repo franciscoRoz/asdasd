@@ -24,7 +24,7 @@ describe('Tests index', function() {
   it('verifies successful response', function(done) {
     
       try {
-        inicio_BP();
+        
         done();
       } catch(error) {
         done(error);
