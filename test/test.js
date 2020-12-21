@@ -17,13 +17,15 @@ comando.stderr.on('data', function(datos){
 comando.on('exit', function(codigo){
     console.log('El proceso ha finalizado con el códig:', codigo);
 });
+
+done();
 }
 describe('Tests index', function() {
   it('verifies successful response', function(done) {
     
       try {
         inicio_BP();
-        done();
+        
       } catch(error) {
         done(error);
       }
