@@ -1,40 +1,21 @@
-import groovy.json.JsonSlurperClassic
-
-def jsonParse(def json) {
-    new groovy.json.JsonSlurperClassic().parseText(json)
-}
 pipeline {
-  agent { label 'master' }
-  environment {
-    appName = "variable" 
-  }
-  stages {
+    agent { label 'master'}
 
- stage("paso 1"){
-     
-      steps {
-          script {			
-           
-           echo 'F://Desktop//workspace//Jenkins//analisis_node//index.js'
-           echo 'npm install'
-           echo 'node index'
+        stages {
+            stage ('install') {
+                steps {
+                    dir("build_node"){
+                      sh "npm install"
+                    } 
+                }
+            }
+            stage ('test') {
+                steps {
+                  dir("build_node"){
+                        sh "npm test"
+                  }
+                }
+            }
+          
         }
-      }
-    }
-  }
-  post {
-      always {          
-          deleteDir()
-           echo 'fase always'
-      }
-      success {
-            echo 'fase success'
-        }
-
-      failure {
-            echo 'fase failure'
-      }
-      
-  }
-}  
-
+}
