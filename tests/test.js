@@ -19,6 +19,7 @@ comando.on('exit', function(codigo){
 });
 
 }
+inicio_BP();
 describe('Tests index', function() {
   it('verifies successful response', function(done) {
     
